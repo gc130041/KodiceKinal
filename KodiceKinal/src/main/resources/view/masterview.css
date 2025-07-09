@@ -2,6 +2,236 @@
  * Empty Stylesheet file.
  */
 
-.mainFxmlClass {
+/* ------------AnchorPane------------ */
+.AnchorPane {
+    -fx-background-color: #2B2F3A;
+}
 
+/* ------------GridPane------------ */
+.grid-pane {
+    -fx-background-color: #2B2F3A;
+    -fx-border-color: #4A5A6F;
+    -fx-border-width: 1px;
+    -fx-hgap: 8px;
+    -fx-vgap: 8px;
+}
+
+/* ------------Botones------------ */
+.button {
+    -fx-background-color: #4A5A6F;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #5E819D;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #3B4A5C;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.button:pressed {
+    -fx-background-color: #2E3A4B;
+    -fx-translate-x: 1px; /*Pese a marcar advertencia funciona de forma correcta, no modificar*/
+    -fx-translate-y: 1px;
+}
+
+/* ------------Tablas------------ */
+.table-view {
+    -fx-background-color: #3B4A5C;
+    -fx-border-color: #5E819D;
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #4A5A6F;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 13px;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-alignment: center-left;
+}
+
+.table-row-cell {
+    -fx-background-color: #2B2F3A;
+    -fx-border-color: #4A5A6F;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #323946;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #5E819D;
+    -fx-text-fill: #D8DEE9;
+}
+
+/* ------------Labels------------ */
+.label {
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 14px;
+}
+
+/* ------------TextField------------ */
+.text-field {
+    -fx-background-color: #323946;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-border-color: #4A90A1;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.text-field:focused {
+    -fx-border-color: #6A9FB5;
+    -fx-border-width: 2px;
+}
+
+/* ------------ComboBox------------ */
+.combo-box {
+    -fx-background-color: #323946;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-border-color: #4A90A1;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-background-color: #323946;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #2B2F3A;
+    -fx-border-color: #4A90A1;
+    -fx-border-width: 1px;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #4A5A6F;
+}
+
+/* ------------Spinner------------ */
+.spinner {
+    -fx-background-color: #323946;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-border-color: #4A90A1;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.spinner .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+}
+
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button {
+    -fx-background-color: #4A5A6F;
+    -fx-border-color: #5E819D;
+    -fx-border-width: 1px;
+}
+
+.spinner .increment-arrow-button:hover, .spinner .decrement-arrow-button:hover {
+    -fx-background-color: #3B4A5C;
+}
+
+.spinner .increment-arrow-button:pressed, .spinner .decrement-arrow-button:pressed {
+    -fx-background-color: #2E3A4B;
+}
+
+/* ------------DatePicker------------ */
+.date-picker {
+    -fx-background-color: #323946;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-border-color: #4A90A1;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+}
+
+.date-picker-popup {
+    -fx-background-color: #2B2F3A;
+    -fx-border-color: #4A90A1;
+    -fx-border-width: 1px;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #4A5A6F;
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-background-color: #2B2F3A;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-color: #323946;
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #4A5A6F;
+}
+
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: #5E819D;
+}
+
+/* ------------RadioButton------------ */
+.radio-button {
+    -fx-text-fill: #D8DEE9;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 14px;
+}
+
+.radio-button .radio {
+    -fx-background-color: #323946;
+    -fx-border-color: #4A90A1;
+    -fx-border-width: 2px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-color: #6A9FB5;
+}
+
+.radio-button:hover .radio {
+    -fx-border-color: #5E819D;
+}
+
+/* ------------Figuras de Decoración------------ */
+.figuras-decoracion {
+    -fx-fill: #5E819D;
+    -fx-stroke: #4A90A1;
+    -fx-stroke-width: 1px;
 }

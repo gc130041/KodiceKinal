@@ -11,7 +11,7 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author sioma
+ * @author KODICEKINAL S.A.
  */
 public class PaginaPrincipalController implements Initializable {
 
