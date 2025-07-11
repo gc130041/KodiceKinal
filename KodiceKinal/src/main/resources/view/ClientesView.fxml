@@ -1,14 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.olivercontreras.controller.ClientesController">
-    <stylesheets>
-        <URL value="@masterview.css"/>
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="744.0" styleClass="AnchorPane" stylesheets="@../resource/masterview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.olivercontreras.controller.ClientesController">
+   <children>
+      <Label layoutX="154.0" layoutY="21.0" prefHeight="29.0" prefWidth="100.0" text="Clientes">
+         <font>
+            <Font size="72.0" />
+         </font>
+      </Label>
+      <TableView layoutX="108.0" layoutY="67.0" prefHeight="275.0" prefWidth="624.0">
+        <columns>
+          <TableColumn prefWidth="39.0" text="Id" />
+          <TableColumn prefWidth="103.0" text="Nombre" />
+            <TableColumn prefWidth="114.0" text="Apellido" />
+            <TableColumn prefWidth="91.0" text="Telefono" />
+            <TableColumn prefWidth="101.0" text="Direccion" />
+            <TableColumn minWidth="8.0" prefWidth="84.0" text="Email" />
+            <TableColumn prefWidth="86.0" text="Ingreso" />
+        </columns>
+      </TableView>
+      <Button alignment="BOTTOM_RIGHT" layoutX="470.0" layoutY="14.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="262.0" text="Buscar">
+         <graphic>
+            <TextField promptText="Buscar cliente" />
+         </graphic>
+      </Button>
+      <GridPane layoutX="108.0" layoutY="348.0" prefHeight="143.0" prefWidth="582.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="85.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="164.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="28.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="99.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="203.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField GridPane.columnIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="4" />
+            <TextField GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <DatePicker prefHeight="29.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label text="Nombre" GridPane.rowIndex="1" />
+            <Label text="Apellido" GridPane.rowIndex="2" />
+            <Label text="Telefono" GridPane.rowIndex="3" />
+            <Label text="Email" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Ingreso" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="Direccion" GridPane.columnIndex="3" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Id" />
+         </children>
+      </GridPane>
+      <VBox layoutX="23.0" layoutY="93.0" prefHeight="230.0" prefWidth="85.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" text="Nuevo" />
+            <Button mnemonicParsing="false" text="Editar" />
+            <Button mnemonicParsing="false" text="Borrar" />
+            <Button mnemonicParsing="false" text="Guardar" />
+            <Button mnemonicParsing="false" text="Cancelar" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="86.0" fitWidth="127.0" layoutX="6.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/imagen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="52.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/ID.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="60.0" layoutX="52.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/Telefono.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="698.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/direccion.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="697.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/email.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="697.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/Ingreso.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="67.0" layoutX="399.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/Buscar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="77.0" fitWidth="52.0" layoutX="46.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/Clientes.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
