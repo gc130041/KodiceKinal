@@ -60,7 +60,25 @@ public class Main extends Application{
     
     public void inicio(){
     try {
-        InicioController ic = (InicioController) cambiarEscena("InicioView.fxml", 512, 409);
+        InicioController ic = (InicioController) cambiarEscena("InicioView.fxml", 600, 400);
+        ic.setPrincipal(this);
+    } catch (Exception ex) {
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+    
+    public void iSesion(){
+    try {
+        InicioController ic = (InicioController) cambiarEscena("InicioSesionView.fxml", 600, 400);
+        ic.setPrincipal(this);
+    } catch (Exception ex) {
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+    
+    public void PPrincipal(){
+    try {
+        InicioController ic = (InicioController) cambiarEscena("PaginaPrincipalView.fxml", 600, 400);
         ic.setPrincipal(this);
     } catch (Exception ex) {
         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

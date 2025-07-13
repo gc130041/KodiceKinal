@@ -3,7 +3,10 @@ package org.olivercontreras.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import org.olivercontreras.system.Main;
 
 /**
@@ -19,9 +22,20 @@ public class InicioController implements Initializable {
         this.principal = principal;
     }
     
+    @FXML
+    private Button btnISesion;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    @FXML
+    public void clickActionEvent(ActionEvent evento){
+        if (evento.getSource()==btnISesion) {
+            System.out.println("Inicia Sesion porfavor");
+            principal.iSesion();
+        }
+    }
     
 }
