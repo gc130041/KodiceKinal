@@ -1,6 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
+
 
 package org.olivercontreras.system;
 
@@ -9,36 +7,64 @@ package org.olivercontreras.system;
  * @author KODICEKINAL S.A.
  */
 
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.json.JSONObject;
+import org.olivercontreras.controller.InicioController;
 
 public class Main extends Application{
 
+    private Scene escena;
+    private Stage Inicio;
+    
     public static void main(String[] args) {
-        
         launch(args);
-        
-//        JSONObject persona = new JSONObject();
-//        
-//        persona.put("nombre:","Gabriel");
-//        persona.put("apellido:","Castellanos");
-//        persona.put("edad:","17");
-//        persona.put("valido:","true");
-//        
-//        System.out.println("Contenido de JSON: ");
-//        System.out.println(persona.toString(1));
     }
 
     @Override
     public void start(Stage escenario) throws Exception {
-        FXMLLoader cargador = new FXMLLoader(getClass().getResource("/view/InicioView.fxml"));
-        Parent raiz = cargador.load();
-        Scene escena = new Scene(raiz);
-        escenario.setScene(escena);
-        escenario.show();
+        this.Inicio = escenario;
+        inicio();
+        
+        Inicio.setScene(escena);
+        Inicio.setTitle("KodiceKinal");
+        Inicio.show();
     }
+    
+    public Initializable cambiarEscena(String fxml, double ancho, double alto) throws Exception {
+        Initializable interfazCargada = null;
+        
+        FXMLLoader cargadorFXML = new FXMLLoader();
+        
+        InputStream archivoFXML = Main.class.getResourceAsStream("/view/" + fxml);
+        cargadorFXML.setBuilderFactory(new JavaFXBuilderFactory());
+        cargadorFXML.setLocation(Main.class.getResource("/view/"+fxml));
+        
+        escena = new Scene(cargadorFXML.load(archivoFXML), ancho, alto);
+        Inicio.setScene(escena);
+        Inicio.sizeToScene();
+        
+        interfazCargada = cargadorFXML.getController();
+        
+        return interfazCargada;
+    }
+    
+    public void inicio(){
+    try {
+        InicioController ic = (InicioController) cambiarEscena("InicioView.fxml", 512, 409);
+        ic.setPrincipal(this);
+    } catch (Exception ex) {
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+    
 }
