@@ -13,15 +13,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="744.0" styleClass="AnchorPane" stylesheets="@../resource/masterview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.olivercontreras.controller.ClientesController">
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="744.0" styleClass="AnchorPane" stylesheets="@masterview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.olivercontreras.controller.ClientesController">
    <children>
-      <Label layoutX="154.0" layoutY="21.0" prefHeight="29.0" prefWidth="100.0" text="Clientes">
-         <font>
-            <Font size="72.0" />
-         </font>
-      </Label>
       <TableView layoutX="108.0" layoutY="67.0" prefHeight="275.0" prefWidth="624.0">
         <columns>
           <TableColumn prefWidth="39.0" text="Id" />
@@ -80,43 +74,44 @@
       </VBox>
       <ImageView fitHeight="86.0" fitWidth="127.0" layoutX="6.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/imagen.png" />
+            <Image url="@imagenes/logo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="52.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/ID.png" />
+            <Image url="@imagenes/ID.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="42.0" fitWidth="60.0" layoutX="52.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/Telefono.png" />
+            <Image url="@imagenes/Telefono.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="698.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/direccion.png" />
+            <Image url="@imagenes/direccion.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="697.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/email.png" />
+            <Image url="@imagenes/email.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="36.0" fitWidth="42.0" layoutX="697.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/Ingreso.png" />
+            <Image url="@imagenes/Ingreso.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="58.0" fitWidth="67.0" layoutX="399.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/Buscar.png" />
+            <Image url="@imagenes/Buscar.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="77.0" fitWidth="52.0" layoutX="46.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../Downloads/Clientes.png" />
+            <Image url="@imagenes/Clientes.png" />
          </image>
       </ImageView>
+      <Label layoutX="151.0" layoutY="17.0" prefHeight="36.0" prefWidth="127.0" text="Clientes" />
    </children>
 </AnchorPane>
