@@ -29,17 +29,17 @@
       <CheckBox layoutX="61.0" layoutY="302.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="239.0" styleClass="radio-button" stylesheets="@masterview.css" text="Acepto los terminos y condiciones" />
       <ImageView fitHeight="37.0" fitWidth="47.0" layoutX="110.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../usuario.png" />
+            <Image url="@../images/usuario.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="37.0" fitWidth="39.0" layoutX="109.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Cerrar.png" />
+            <Image url="@../images/Cerrar.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="146.0" fitWidth="137.0" layoutX="217.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../logo.png" />
+            <Image url="@../images/logo.png" />
          </image>
       </ImageView>
       <Button layoutX="249.0" layoutY="344.0" mnemonicParsing="false" text="Iniciar Sesion" />

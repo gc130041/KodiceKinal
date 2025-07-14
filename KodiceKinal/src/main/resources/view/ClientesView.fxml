@@ -29,7 +29,7 @@
       </TableView>
       <ImageView fitHeight="86.0" fitWidth="75.0" layoutX="6.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../logo.png" />
+            <Image url="@../images/logo.png" />
          </image>
       </ImageView>
       <Label layoutX="92.0" layoutY="17.0" prefHeight="36.0" prefWidth="127.0" text="Clientes" />
