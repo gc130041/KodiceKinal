@@ -1,5 +1,3 @@
-
-
 package org.olivercontreras.system;
 
 /**
@@ -20,6 +18,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.json.JSONObject;
 import org.olivercontreras.controller.InicioController;
+import org.olivercontreras.controller.InicioSesionController;
+import org.olivercontreras.controller.PaginaPrincipalController;
 
 public class Main extends Application{
 
@@ -69,17 +69,17 @@ public class Main extends Application{
     
     public void iSesion(){
     try {
-        InicioController ic = (InicioController) cambiarEscena("InicioSesionView.fxml", 600, 400);
-        ic.setPrincipal(this);
+        InicioSesionController isc = (InicioSesionController) cambiarEscena("InicioSesionView.fxml", 600, 400);
+        isc.setPrincipal(this);
     } catch (Exception ex) {
         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
     
-    public void PPrincipal(){
+    public void pPrincipal(){
     try {
-        InicioController ic = (InicioController) cambiarEscena("PaginaPrincipalView.fxml", 600, 400);
-        ic.setPrincipal(this);
+        PaginaPrincipalController ppc = (PaginaPrincipalController) cambiarEscena("PaginaPrincipalView.fxml", 600, 400);
+        ppc.setPrincipal(this);
     } catch (Exception ex) {
         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }

@@ -27,7 +27,7 @@
          <children>
             <Button mnemonicParsing="false" text="Contactanos" />
             <Button mnemonicParsing="false" text="Registrarse" />
-            <Button mnemonicParsing="false" text="Iniciar Sesion" />
+            <Button fx:id="btnISesion" mnemonicParsing="false" onAction="#clickActionEvent" text="Iniciar Sesion" />
          </children>
       </HBox>
       <Label layoutX="143.0" layoutY="182.0" text="Encuentra tus libros y autores favoritos  sin esfuerzo" />

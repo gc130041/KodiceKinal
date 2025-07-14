@@ -34,7 +34,7 @@ public class InicioSesionController implements Initializable {
     public void clickActionEvent(ActionEvent evento){
         if (evento.getSource()==btnPPrincipal) {
             System.out.println("Pagina principal");
-            principal.iSesion();
+            principal.pPrincipal();
         }
     }
     

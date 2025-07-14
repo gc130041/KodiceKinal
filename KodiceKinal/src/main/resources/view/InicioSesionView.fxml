@@ -42,7 +42,7 @@
             <Image url="@../images/logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="249.0" layoutY="344.0" mnemonicParsing="false" text="Iniciar Sesion" />
+      <Button fx:id="btnPPrincipal" layoutX="249.0" layoutY="344.0" mnemonicParsing="false" onAction="#clickActionEvent" text="Iniciar Sesion" />
       <Label layoutX="381.0" layoutY="303.0" text="Olvidaste tu contraseña?" />
    </children>
 </AnchorPane>
