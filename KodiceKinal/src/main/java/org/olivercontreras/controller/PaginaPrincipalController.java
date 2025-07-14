@@ -36,12 +36,11 @@ public class PaginaPrincipalController implements Initializable {
         if (evento.getSource()==btnRegresar) {
             System.out.println("Regresando a la pagina de inicio");
             principal.inicio();
-//        }else if (evento.getSource()==btnClientes){
-//            System.out.println("Despliegue del Menu");
-//            principal.menuP();
-//        }
+        }else if (evento.getSource()==btnClientes){
+            System.out.println("Despliegue del Menu");
+            principal.cController();
+        }
     }
     
 }
     
-}

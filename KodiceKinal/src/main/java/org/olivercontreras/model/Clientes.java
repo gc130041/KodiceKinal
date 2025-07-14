@@ -1,7 +1,7 @@
 
 package org.olivercontreras.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -15,12 +15,12 @@ public class Clientes {
     private String telefono;
     private String direccion;
     private String email;
-    private Date fechaIngreso;
+    private LocalDate fechaIngreso;
 
     public Clientes() {
     }
 
-    public Clientes(int idCliente, String nombre, String apellido, String telefono, String direccion, String email, Date fechaIngreso) {
+    public Clientes(int idCliente, String nombre, String apellido, String telefono, String direccion, String email, LocalDate fechaIngreso) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -78,11 +78,11 @@ public class Clientes {
         this.email = email;
     }
 
-    public Date getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 

@@ -16,15 +16,15 @@
 
 <AnchorPane id="AnchorPane" prefHeight="537.0" prefWidth="794.0" styleClass="AnchorPane" stylesheets="@masterview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.olivercontreras.controller.ClientesController">
    <children>
-      <TableView layoutX="302.0" layoutY="14.0" prefHeight="509.0" prefWidth="478.0">
+      <TableView fx:id="tablaClientes" layoutX="302.0" layoutY="14.0" prefHeight="509.0" prefWidth="478.0">
         <columns>
-          <TableColumn prefWidth="39.0" text="Id" />
-          <TableColumn prefWidth="68.0" text="Nombre" />
-            <TableColumn prefWidth="74.0" text="Apellido" />
-            <TableColumn prefWidth="73.0" text="Telefono" />
-            <TableColumn prefWidth="78.0" text="Direccion" />
-            <TableColumn minWidth="8.0" prefWidth="73.0" text="Email" />
-            <TableColumn prefWidth="83.0" text="Ingreso" />
+          <TableColumn fx:id="colIdCliente" prefWidth="39.0" text="Id" />
+          <TableColumn fx:id="colNombreCliente" prefWidth="68.0" text="Nombre" />
+            <TableColumn fx:id="colApellidoCliente" prefWidth="74.0" text="Apellido" />
+            <TableColumn fx:id="colTelefonoCliente" prefWidth="73.0" text="Telefono" />
+            <TableColumn fx:id="colDireccionCliente" prefWidth="78.0" text="Direccion" />
+            <TableColumn fx:id="colEmailCliente" minWidth="8.0" prefWidth="73.0" text="Email" />
+            <TableColumn fx:id="colFechaIngreso" prefWidth="83.0" text="Ingreso" />
         </columns>
       </TableView>
       <ImageView fitHeight="86.0" fitWidth="75.0" layoutX="6.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
@@ -63,24 +63,24 @@
         </rowConstraints>
          <children>
             <Label text="Id" />
-            <TextField GridPane.columnIndex="1" />
+            <TextField fx:id="txtId" GridPane.columnIndex="1" />
             <Label text="Nombre" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Apellido" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtApellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Telefono" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="Direccion" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtDireccion" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Email" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="Ingreso" GridPane.rowIndex="6" />
-            <DatePicker prefHeight="29.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <DatePicker fx:id="dpFecha" prefHeight="29.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
       <Button layoutX="18.0" layoutY="192.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" text="Buscar">
          <graphic>
-            <TextField prefHeight="30.0" prefWidth="183.0" promptText="Buscar Cliente" />
+            <TextField fx:id="txtBuscar" prefHeight="30.0" prefWidth="183.0" promptText="Buscar Cliente" />
          </graphic>
       </Button>
    </children>

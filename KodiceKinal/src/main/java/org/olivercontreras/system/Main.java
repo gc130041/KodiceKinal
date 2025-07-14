@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.json.JSONObject;
+import org.olivercontreras.controller.ClientesController;
 import org.olivercontreras.controller.InicioController;
 import org.olivercontreras.controller.InicioSesionController;
 import org.olivercontreras.controller.PaginaPrincipalController;
@@ -80,6 +81,15 @@ public class Main extends Application{
     try {
         PaginaPrincipalController ppc = (PaginaPrincipalController) cambiarEscena("PaginaPrincipalView.fxml", 600, 400);
         ppc.setPrincipal(this);
+    } catch (Exception ex) {
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+    
+    public void cController(){
+    try {
+        ClientesController cc = (ClientesController) cambiarEscena("ClientesView.fxml", 600, 400);
+        cc.setPrincipal(this);
     } catch (Exception ex) {
         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }
