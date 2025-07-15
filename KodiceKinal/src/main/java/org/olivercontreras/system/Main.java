@@ -88,7 +88,7 @@ public class Main extends Application{
     
     public void cController(){
     try {
-        ClientesController cc = (ClientesController) cambiarEscena("ClientesView.fxml", 600, 400);
+        ClientesController cc = (ClientesController) cambiarEscena("ClientesView.fxml", 794, 537);
         cc.setPrincipal(this);
     } catch (Exception ex) {
         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

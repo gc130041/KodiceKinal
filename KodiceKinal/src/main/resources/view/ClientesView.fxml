@@ -35,18 +35,18 @@
       <Label layoutX="92.0" layoutY="17.0" prefHeight="36.0" prefWidth="127.0" text="Clientes" />
       <HBox layoutX="19.0" layoutY="67.0" prefHeight="36.0" prefWidth="146.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" text="Nuevo" />
-            <Button mnemonicParsing="false" text="Editar" />
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" text="Editar" />
          </children>
       </HBox>
       <HBox layoutX="92.0" layoutY="276.0" prefHeight="36.0" prefWidth="63.0" />
       <HBox layoutX="14.0" layoutY="148.0" prefHeight="36.0" prefWidth="159.0" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" text="Guardar" />
-            <Button mnemonicParsing="false" text="Cancelar" />
+            <Button fx:id="btnGuardar" disable="true" mnemonicParsing="false" onAction="#btnGuardarAction" styleClass="button-darker" text="Guardar" />
+            <Button fx:id="btnCancelar" disable="true" mnemonicParsing="false" onAction="#btnCancelarAction" styleClass="button-darker" text="Cancelar" />
          </children>
       </HBox>
-      <Button layoutX="63.0" layoutY="103.0" mnemonicParsing="false" text="Borrar" />
+      <Button fx:id="btnEliminar" layoutX="63.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnEliminarAction" styleClass="button-crimson" text="Borrar" />
       <GridPane layoutX="10.0" layoutY="256.0" prefHeight="267.0" prefWidth="276.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="83.0" />
@@ -63,25 +63,32 @@
         </rowConstraints>
          <children>
             <Label text="Id" />
-            <TextField fx:id="txtId" GridPane.columnIndex="1" />
+            <TextField fx:id="txtId" disable="true" GridPane.columnIndex="1" />
             <Label text="Nombre" GridPane.rowIndex="1" />
-            <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNombre" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Apellido" GridPane.rowIndex="2" />
-            <TextField fx:id="txtApellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtApellido" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Telefono" GridPane.rowIndex="3" />
-            <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtTelefono" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="Direccion" GridPane.rowIndex="4" />
-            <TextField fx:id="txtDireccion" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtDireccion" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Email" GridPane.rowIndex="5" />
-            <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtEmail" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="Ingreso" GridPane.rowIndex="6" />
-            <DatePicker fx:id="dpFecha" prefHeight="29.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <DatePicker fx:id="dpFecha" disable="true" prefHeight="29.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
-      <Button layoutX="18.0" layoutY="192.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" text="Buscar">
+      <Button layoutX="18.0" layoutY="192.0" mnemonicParsing="false" onAction="#buscarCliente" prefHeight="42.0" prefWidth="259.0" text="Buscar">
          <graphic>
             <TextField fx:id="txtBuscar" prefHeight="30.0" prefWidth="183.0" promptText="Buscar Cliente" />
          </graphic>
       </Button>
+      <HBox layoutX="226.0" layoutY="67.0" prefHeight="30.0" prefWidth="37.0">
+         <children>
+            <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" prefHeight="30.0" prefWidth="25.0" text="&lt;" />
+            <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#btnSiguienteAction" prefHeight="30.0" prefWidth="4.0" text="&gt;" />
+         </children>
+      </HBox>
+      <Button fx:id="btnRegresar" layoutX="202.0" layoutY="20.0" mnemonicParsing="false" onAction="#clickActionHandler" prefHeight="27.0" prefWidth="82.0" styleClass="button-darker" text="Regresar" />
    </children>
 </AnchorPane>

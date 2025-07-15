@@ -32,7 +32,7 @@ import org.olivercontreras.system.Main;
 public class ClientesController implements Initializable {
 
     @FXML private TableView<Clientes> tablaClientes;
-    @FXML private TableColumn colIdCliente, colNombreCliente, colApellidoCliente, colEmailCliente, colTelefonoCliente, colDireccionCliente, colFechaIngreso;
+    @FXML private TableColumn colIdCliente, colNombreCliente, colApellidoCliente, colTelefonoCliente, colEmailCliente, colDireccionCliente, colFechaIngreso;
     
     @FXML
     private TextField txtId, txtNombre, txtApellido, txtTelefono, txtDireccion, txtEmail, txtBuscar;
@@ -141,7 +141,7 @@ public class ClientesController implements Initializable {
         String telefono = txtTelefono.getText();
         String direccion = txtDireccion.getText();
         String email = txtEmail.getText();
-        Clientes cliente = new Clientes(codigoCliente, nombre, apellido, email, telefono, direccion, dpFecha.getValue());
+        Clientes cliente = new Clientes(codigoCliente, nombre, apellido, telefono, email , direccion, dpFecha.getValue());
         return cliente;
     }
     

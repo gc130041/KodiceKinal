@@ -41,6 +41,58 @@
     -fx-translate-y: 1px;
 }
 
+/* Más oscuro */
+
+.button-darker {
+    -fx-background-color: #3A4A5A;
+    -fx-text-fill: #C8D4D9;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #4B6B7A;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+
+.button-darker:hover {
+    -fx-background-color: #2C3A47;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.button-darker:pressed {
+    -fx-background-color: #223038;
+    -fx-translate-x: 1px;
+    -fx-translate-y: 1px;
+}
+
+/* Carmesí */
+
+.button-crimson {
+    -fx-background-color: #4D1A2F;
+    -fx-text-fill: #D9BFC5;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #6E2644;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+
+.button-crimson:hover {
+    -fx-background-color: #401527;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.button-crimson:pressed {
+    -fx-background-color: #351120;
+    -fx-translate-x: 1px;
+    -fx-translate-y: 1px;
+}
+
 /* ------------Tablas------------ */
 .table-view {
     -fx-background-color: #3B4A5C;

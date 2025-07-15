@@ -81,7 +81,8 @@ create procedure sp_editarCliente(
 )
 begin
     update Clientes
-    set nombre = p_nombre,
+    set idCliente = p_id,
+		nombre = p_nombre,
         apellido = p_apellido,
         telefono = p_telefono,
         direccion = p_direccion,
