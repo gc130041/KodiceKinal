@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.olivercontreras.controller.RegistrarseController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.olivercontreras.controller.RegistrarseController">
     <stylesheets>
         <URL value="@masterview.css" />
     </stylesheets>
@@ -17,5 +19,14 @@
             <Image url="@../images/logo.png" />
          </image>
       </ImageView>
+      <TextField layoutX="146.0" layoutY="129.0" prefHeight="27.0" prefWidth="320.0" promptText="Escriba un usuario" />
+      <TextField layoutX="146.0" layoutY="242.0" prefHeight="27.0" prefWidth="320.0" promptText="Escriba una contraseña" />
+      <TextField layoutX="146.0" layoutY="187.0" prefHeight="27.0" prefWidth="320.0" promptText="Escriba un correo" />
+      <Label layoutX="87.0" layoutY="134.0" text="Usuario" />
+      <Label layoutX="91.0" layoutY="192.0" text="Correo" />
+      <Label layoutX="66.0" layoutY="247.0" text="Contraseña" />
+      <Button layoutX="210.0" layoutY="309.0" mnemonicParsing="false" text="Guardar" />
+      <Button layoutX="318.0" layoutY="309.0" mnemonicParsing="false" styleClass="button-crimson" text="Cancelar" />
+      <Button layoutX="61.0" layoutY="32.0" mnemonicParsing="false" text="Regresar" />
    </children>
 </AnchorPane>
