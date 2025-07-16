@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.olivercontreras.controller.AcercaDeController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.olivercontreras.controller.AcercaDeController">
     <stylesheets>
         <URL value="@masterview.css" />
     </stylesheets>
@@ -30,7 +30,7 @@
       </ImageView>
       <Label layoutX="125.0" layoutY="192.0" text="DAMB1828" />
       <Label layoutX="395.0" layoutY="184.0" prefHeight="33.0" prefWidth="64.0" text="gc130041" />
-      <Button layoutX="18.0" layoutY="24.0" mnemonicParsing="false" text="Regresar" />
+      <Button fx:id="btnRegresar" layoutX="18.0" layoutY="24.0" mnemonicParsing="false" onAction="#clickActionHandler" text="Regresar" />
       <Label layoutX="41.0" layoutY="249.0" text="Realizo:" />
       <Label layoutX="36.0" layoutY="270.0" text="Las vistas" />
       <Label layoutX="18.0" layoutY="294.0" text="La Base de Datos" />

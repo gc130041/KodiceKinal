@@ -25,7 +25,7 @@
       <Label layoutX="103.0" layoutY="40.0" text="KodiceKinal" />
       <HBox alignment="CENTER_RIGHT" layoutX="233.0" layoutY="16.0" prefHeight="67.0" prefWidth="360.0" spacing="30.0">
          <children>
-            <Button mnemonicParsing="false" text="Contactanos" />
+            <Button fx:id="btnAcercaDe" mnemonicParsing="false" onAction="#clickActionEvent" text="Acerca de" />
             <Button mnemonicParsing="false" text="Registrarse" />
             <Button fx:id="btnISesion" mnemonicParsing="false" onAction="#clickActionEvent" text="Iniciar Sesion" />
          </children>

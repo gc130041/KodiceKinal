@@ -23,7 +23,7 @@ public class InicioController implements Initializable {
     }
     
     @FXML
-    private Button btnISesion;
+    private Button btnISesion, btnAcercaDe;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,6 +35,9 @@ public class InicioController implements Initializable {
         if (evento.getSource()==btnISesion) {
             System.out.println("Inicia Sesion porfavor");
             principal.iSesion();
+        }else if (evento.getSource()==btnAcercaDe){
+            System.out.println("Dirigiendo a Acerca de");
+            principal.AcercaDeController();
         }
     }
     
