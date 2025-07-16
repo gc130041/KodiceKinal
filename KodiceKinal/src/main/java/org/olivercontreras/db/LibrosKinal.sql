@@ -3,6 +3,17 @@ create database DBlibroskinal;
 
 use DBlibroskinal;
 
+-- login
+create table Registros(
+	id int auto_increment,
+    username varchar(50) not null unique,
+    email varchar(100) not null unique,
+    password varchar(255) not null
+);
+
+insert into usuarios(username, email, password)
+values('admin', 'admin@ejemplo.com','password123');
+
 -- Tabla Clientes
 create table Clientes(
 	idCliente int auto_increment,
