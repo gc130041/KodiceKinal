@@ -262,7 +262,7 @@
 .radio-button {
     -fx-text-fill: #D8DEE9;
     -fx-font-family: "Book Antiqua";
-    -fx-font-size: 14px;
+    -fx-font-size: 12px;
 }
 
 .radio-button .radio {

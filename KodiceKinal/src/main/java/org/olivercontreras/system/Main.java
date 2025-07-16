@@ -22,6 +22,7 @@ import org.olivercontreras.controller.ClientesController;
 import org.olivercontreras.controller.InicioController;
 import org.olivercontreras.controller.InicioSesionController;
 import org.olivercontreras.controller.PaginaPrincipalController;
+import org.olivercontreras.controller.ProductosController;
 
 public class Main extends Application{
 
@@ -100,6 +101,15 @@ public class Main extends Application{
     try {
         AcercaDeController adc = (AcercaDeController) cambiarEscena("AcercaDeView.fxml", 600, 400);
         adc.setPrincipal(this);
+    } catch (Exception ex) {
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+ 
+    public void pController(){
+    try {
+        ProductosController pc = (ProductosController) cambiarEscena("ProductosView.fxml", 821, 535);
+        pc.setPrincipal(this);
     } catch (Exception ex) {
         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }

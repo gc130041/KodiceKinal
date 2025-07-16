@@ -39,6 +39,9 @@ public class PaginaPrincipalController implements Initializable {
         }else if (evento.getSource()==btnClientes){
             System.out.println("Dirigiendo a Clientes");
             principal.cController();
+        }else if (evento.getSource()==btnProductos){
+            System.out.println("Dirigiendo a Productos");
+            principal.pController();
         }
     }
     

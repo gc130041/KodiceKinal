@@ -7,6 +7,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -32,35 +33,36 @@
             <Image url="@../images/logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="103.0" layoutY="52.0" text="Productos" />
-      <TableView layoutX="312.0" layoutY="14.0" prefHeight="508.0" prefWidth="495.0">
+      <Label layoutX="104.0" layoutY="43.0" text="Productos" />
+      <TableView fx:id="tablaProductos" layoutX="312.0" layoutY="14.0" prefHeight="508.0" prefWidth="495.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Id" />
-          <TableColumn prefWidth="75.0" text="Titulo" />
-            <TableColumn prefWidth="75.0" text="Autor" />
-            <TableColumn prefWidth="85.0" text="Publicacion" />
-            <TableColumn prefWidth="106.0" text="Disponibilidad" />
-            <TableColumn prefWidth="75.0" text="Cliente" />
+          <TableColumn fx:id="colIdProducto" prefWidth="39.0" text="Id" />
+          <TableColumn fx:id="colTitulo" prefWidth="72.0" text="Titulo" />
+            <TableColumn fx:id="colAutor" prefWidth="82.0" text="Autor" />
+            <TableColumn fx:id="colFechaPublicacion" text="Publicacion" />
+            <TableColumn fx:id="colPrecio" prefWidth="65.0" text="Precio" />
+            <TableColumn fx:id="colDisponibilidad" prefWidth="103.0" text="Disponibilidad" />
+            <TableColumn fx:id="colIDF" minWidth="0.0" prefWidth="52.0" text="Cliente" />
         </columns>
       </TableView>
       <HBox layoutX="28.0" layoutY="86.0" prefHeight="72.0" prefWidth="151.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" text="Nuevo" />
-            <Button mnemonicParsing="false" text="Editar" />
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" text="Editar" />
          </children>
       </HBox>
-      <HBox layoutX="59.0" layoutY="146.0" prefHeight="72.0" prefWidth="83.0" spacing="20.0">
+      <HBox layoutX="60.0" layoutY="135.0" prefHeight="72.0" prefWidth="83.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" text="Eliminar" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" styleClass="button-crimson" text="Eliminar" />
          </children>
       </HBox>
-      <HBox layoutX="11.0" layoutY="202.0" prefHeight="72.0" prefWidth="184.0" spacing="10.0">
+      <HBox layoutX="11.0" layoutY="192.0" prefHeight="72.0" prefWidth="184.0" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="92.0" text="Guardar" />
-            <Button mnemonicParsing="false" text="Cancelar" />
+            <Button fx:id="btnGuardar" disable="true" mnemonicParsing="false" onAction="#btnGuardarAction" prefHeight="30.0" prefWidth="92.0" styleClass="button-darker" text="Guardar" />
+            <Button fx:id="btnCancelar" disable="true" mnemonicParsing="false" onAction="#btnCancelarAction" styleClass="button-darker" text="Cancelar" />
          </children>
       </HBox>
-      <GridPane layoutX="9.0" layoutY="326.0" prefHeight="195.0" prefWidth="300.0">
+      <GridPane layoutX="9.0" layoutY="297.0" prefHeight="224.0" prefWidth="300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="97.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
@@ -68,6 +70,7 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -79,25 +82,34 @@
             <Label text="Titulo" GridPane.rowIndex="1" />
             <Label text="Autor" GridPane.rowIndex="2" />
             <Label text="Publicacion" GridPane.rowIndex="3" />
-            <Label text="Disponibilidad" GridPane.rowIndex="4" />
-            <Label text="Cliente" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox prefHeight="27.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label text="Disponibilidad" GridPane.rowIndex="5" />
+            <Label text="Cliente" GridPane.rowIndex="6" />
+            <TextField fx:id="txtId" disable="true" GridPane.columnIndex="1" />
+            <TextField fx:id="txtTitulo" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAutor" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dpFecha" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbxIDF" disable="true" prefHeight="27.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Disponible" />
-                  <RadioButton mnemonicParsing="false" prefWidth="74.0" text="Agotado" />
+                  <RadioButton fx:id="rbDisponible" disable="true" mnemonicParsing="false" prefHeight="23.0" prefWidth="88.0" text="Disponible" />
+                  <RadioButton fx:id="rbAgotado" disable="true" mnemonicParsing="false" prefWidth="74.0" text="Agotado" />
                </children>
             </HBox>
+            <Spinner fx:id="spPrecio" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Precio" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button layoutX="16.0" layoutY="253.0" mnemonicParsing="false" text="Buscar">
+      <Button layoutX="11.0" layoutY="239.0" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar">
          <graphic>
-            <TextField promptText="Buscar Producto" />
+            <TextField fx:id="txtBuscar" promptText="Buscar Producto" />
          </graphic>
       </Button>
+      <Button fx:id="btnRegresar" layoutX="220.0" layoutY="37.0" mnemonicParsing="false" onAction="#clickActionHandler" styleClass="button-darker" text="Regresar" />
+      <HBox layoutX="239.0" layoutY="86.0" prefHeight="30.0" prefWidth="45.0">
+         <children>
+            <Button fx:id="btnAnterior" mnemonicParsing="false" onAction="#btnAnteriorAction" prefHeight="30.0" prefWidth="0.0" text="&lt;" />
+            <Button fx:id="btnSiguiente" mnemonicParsing="false" onAction="#btnSiguienteAction" prefHeight="30.0" prefWidth="3.0" text="&gt;" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

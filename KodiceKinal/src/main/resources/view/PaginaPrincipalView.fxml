@@ -23,7 +23,7 @@
       <VBox layoutX="24.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
          <children>
             <Button fx:id="btnClientes" mnemonicParsing="false" onAction="#clickActionHandler" text="Clientes" />
-            <Button mnemonicParsing="false" text="Productos" />
+            <Button fx:id="btnProductos" mnemonicParsing="false" onAction="#clickActionHandler" text="Productos" />
          </children>
       </VBox>
       <ImageView fitHeight="336.0" fitWidth="451.0" layoutX="320.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">

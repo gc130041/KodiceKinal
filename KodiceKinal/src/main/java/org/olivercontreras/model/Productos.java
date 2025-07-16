@@ -1,7 +1,7 @@
 
 package org.olivercontreras.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -12,7 +12,7 @@ public class Productos {
     private int idLibro;
     private String titulo;
     private String autor;
-    private Date fechaPublicacion;
+    private LocalDate fechaPublicacion;
     private double precio;
     private String disponibilidad;
     private int idCliente;
@@ -20,7 +20,7 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(int idLibro, String titulo, String autor, Date fechaPublicacion, double precio, String disponibilidad, int idCliente) {
+    public Productos(int idLibro, String titulo, String autor, LocalDate fechaPublicacion, double precio, String disponibilidad, int idCliente) {
         this.idLibro = idLibro;
         this.titulo = titulo;
         this.autor = autor;
@@ -54,11 +54,11 @@ public class Productos {
         this.autor = autor;
     }
 
-    public Date getFechaPublicacion() {
+    public LocalDate getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Date fechaPublicacion) {
+    public void setFechaPublicacion(LocalDate fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 

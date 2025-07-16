@@ -26,7 +26,7 @@ create table Productos(
     idCliente int not null,
     constraint pk_idLibro primary key (idLibro),
     constraint fk_idCliente foreign key (idCliente)
-		references Clientes(idCliente)
+		references Clientes(idCliente) on delete cascade
 );
 
 -- Agregar Cliente
