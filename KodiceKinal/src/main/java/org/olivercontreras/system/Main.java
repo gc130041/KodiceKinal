@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import org.json.JSONObject;
 import org.olivercontreras.controller.AcercaDeController;
 import org.olivercontreras.controller.ClientesController;
+import org.olivercontreras.controller.ComprasController;
 import org.olivercontreras.controller.InicioController;
 import org.olivercontreras.controller.InicioSesionController;
 import org.olivercontreras.controller.PaginaPrincipalController;
@@ -120,6 +121,15 @@ public class Main extends Application{
     try {
         RegistrarseController rc = (RegistrarseController) cambiarEscena("RegistrarseView.fxml", 600, 400);
         rc.setPrincipal(this);
+    } catch (Exception ex) {
+        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+    
+    public void coController(){
+    try {
+        ComprasController coc = (ComprasController) cambiarEscena("ComprasView.fxml", 714, 537);
+        coc.setPrincipal(this);
     } catch (Exception ex) {
         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
     }

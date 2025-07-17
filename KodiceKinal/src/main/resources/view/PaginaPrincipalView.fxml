@@ -24,6 +24,7 @@
          <children>
             <Button fx:id="btnClientes" mnemonicParsing="false" onAction="#clickActionHandler" text="Clientes" />
             <Button fx:id="btnProductos" mnemonicParsing="false" onAction="#clickActionHandler" text="Productos" />
+            <Button fx:id="btnCompras" mnemonicParsing="false" onAction="#clickActionHandler" text="Compras" />
             <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#clickActionHandler" styleClass="button-crimson" text="Inicio" />
          </children>
       </VBox>

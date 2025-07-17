@@ -37,6 +37,17 @@ create table Productos(
 		references Clientes(idCliente) on delete cascade
 );
 
+-- Tabla Compras
+create table compras(
+    idCompra int auto_increment primary key,
+    idCliente int not null,
+    idLibro int not null,
+    fechaCompra date not null,
+    puntuacion enum('1', '2', '3', '4', '5') null,
+    constraint fk_compras_clientes foreign key (idCliente) references clientes(idCliente),
+    constraint fk_compras_productos foreign key (idLibro) references productos(idLibro)
+);
+
 -- Agregar Cliente
 delimiter //
 create procedure sp_agregarCliente(
@@ -179,6 +190,65 @@ begin
 end;//
 delimiter ;
 
+-- Compras
+-- agregar compra (create)
+delimiter //
+create procedure sp_agregarcompra(
+    in p_idCliente int,
+    in p_idLibro int,
+    in p_fechaCompra date,
+    in p_puntuacion enum('1', '2', '3', '4', '5')
+)
+begin
+    insert into compras(idCliente, idLibro, fechaCompra, puntuacion)
+    values(p_idCliente, p_idLibro, p_fechaCompra, p_puntuacion);
+end //
+delimiter ;
+
+-- listar compras
+delimiter //
+create procedure sp_listarcompras()
+begin
+    select * from compras;
+end //
+delimiter ;
+
+-- buscar compra
+delimiter //
+create procedure sp_buscarcompra(in p_idCompra int)
+begin
+    select * from compras where idCompra = p_idCompra;
+end //
+delimiter ;
+
+-- editar compra
+delimiter //
+create procedure sp_editarcompra(
+    in p_idCompra int,
+    in p_idCliente int,
+    in p_idLibro int,
+    in p_fechaCompra date,
+    in p_puntuacion enum('1', '2', '3', '4', '5')
+)
+begin
+    update compras
+    set 
+        idCliente = p_idCliente,
+        idLibro = p_idLibro,
+        fechaCompra = p_fechaCompra,
+        puntuacion = p_puntuacion
+    where idCompra = p_idCompra;
+end //
+delimiter ;
+
+-- eliminar compra
+delimiter //
+create procedure sp_eliminarcompra(in p_idCompra int)
+begin
+    delete from compras where idCompra = p_idCompra;
+end //
+delimiter ;
+
 -- Registro
 -- Agregar
 delimiter //
@@ -231,6 +301,23 @@ call sp_agregarProducto('Las aventuras de Huckleberry Finn', 'Mark Twain', '1884
 call sp_listarProducto();
 call sp_editarProducto(5, 'El principito', 'Antoine de Saint-Exupéry', '1943-04-06', 8.99, 'disponible', 5);
 call sp_eliminarProducto(14);
+
+-- call compras
+call sp_agregarcompra(1, 5, '2023-10-15', '5');
+call sp_agregarcompra(2, 1, '2023-11-02', '4');
+call sp_agregarcompra(3, 8, '2023-11-20', '5');
+call sp_agregarcompra(1, 2, '2023-12-05', '4');
+call sp_agregarcompra(4, 7, '2023-12-28', '5');
+call sp_agregarcompra(5, 3, '2024-01-10', '3');
+call sp_agregarcompra(2, 5, '2024-01-22', '1');
+call sp_agregarcompra(6, 10, '2024-02-14', '5');
+call sp_agregarcompra(7, 4, '2024-02-28', '4');
+call sp_agregarcompra(8, 9, '2024-03-12', '5');
+call sp_agregarcompra(3, 1, '2024-03-30', '4');
+call sp_agregarcompra(1, 8, '2024-04-05', '5');
+call sp_agregarcompra(5, 6, '2024-04-18', '2');
+call sp_agregarcompra(7, 7, '2024-05-01', '5');
+call sp_agregarcompra(4, 2, '2024-05-09', '4');
 
 -- call registro
 call sp_agregarRegistro('admin', 'admin@ejemplo.com', 'admin');
