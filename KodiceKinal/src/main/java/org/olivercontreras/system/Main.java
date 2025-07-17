@@ -41,6 +41,7 @@ public class Main extends Application{
         inicio();
         
         Inicio.setScene(escena);
+        escenario.getIcons().add(new Image(getClass().getResourceAsStream("/images/iconoKodiceKinal.png")));
         Inicio.setTitle("KodiceKinal");
         Inicio.show();
     }

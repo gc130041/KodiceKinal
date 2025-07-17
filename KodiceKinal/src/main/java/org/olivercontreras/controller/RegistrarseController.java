@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import java.io.InputStream;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -92,6 +95,21 @@ public class RegistrarseController implements Initializable {
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
+        try {
+            String rutaIcono = "/images/iconoKodiceKinal.png"; 
+            InputStream streamIcono = getClass().getResourceAsStream(rutaIcono);
+            
+            if (streamIcono != null) {
+                Image icono = new Image(streamIcono);
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(icono);
+            } else {
+                System.err.println("Advertencia: No se pudo encontrar el icono en la ruta: " + rutaIcono);
+            }
+        } catch (Exception e) {
+            System.err.println("Error al cargar el icono de la alerta.");
+            e.printStackTrace();
+        }
         alert.showAndWait();
     }
 }
