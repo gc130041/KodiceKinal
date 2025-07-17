@@ -4,15 +4,12 @@ create database DBlibroskinal;
 use DBlibroskinal;
 
 -- login
-create table Registros(
-	id int auto_increment,
+create table registros(
+    id int auto_increment primary key,
     username varchar(50) not null unique,
     email varchar(100) not null unique,
     password varchar(255) not null
 );
-
-insert into usuarios(username, email, password)
-values('admin', 'admin@ejemplo.com','password123');
 
 -- Tabla Clientes
 create table Clientes(
@@ -182,6 +179,20 @@ begin
 end;//
 delimiter ;
 
+-- Registro
+-- Agregar
+delimiter //
+create procedure sp_agregarRegistro(
+    in p_username varchar(50),
+    in p_email varchar(100),
+    in p_password varchar(255)
+)
+begin
+    insert into registros(username, email, password)
+    values (p_username, p_email, p_password);
+end //
+delimiter ;
+
 -- call clientes --
 call sp_agregarCliente('Juan', 'Perez', '555-1234', 'Calle Falsa 123, Ciudad de México', 'juan.perez@example.com', '2023-01-15');
 call sp_agregarCliente('Maria', 'Gomez', '555-5678', 'Avenida Siempre Viva 456, Guadalajara', 'maria.gomez@example.com', '2022-11-20');
@@ -220,3 +231,8 @@ call sp_agregarProducto('Las aventuras de Huckleberry Finn', 'Mark Twain', '1884
 call sp_listarProducto();
 call sp_editarProducto(5, 'El principito', 'Antoine de Saint-Exupéry', '1943-04-06', 8.99, 'disponible', 5);
 call sp_eliminarProducto(14);
+
+-- call registro
+call sp_agregarRegistro('admin', 'admin@ejemplo.com', 'admin');
+call sp_agregarRegistro('juanperez', 'juan.perez@email.com', 'nose');
+call sp_agregarRegistro('mariagarcia', 'maria.g@web.net', 'tampocose');

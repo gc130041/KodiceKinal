@@ -1,12 +1,18 @@
-
 package org.olivercontreras.controller;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import org.olivercontreras.db.Conexion;
 import org.olivercontreras.system.Main;
 
 /**
@@ -17,25 +23,68 @@ import org.olivercontreras.system.Main;
 public class InicioSesionController implements Initializable {
 
     private Main principal;
+
+    @FXML private TextField txtUsername;
+    @FXML private PasswordField pfPassword;
+    @FXML private Button btnLogin, btnRegresar;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }
     
     public void setPrincipal(Main principal) {
         this.principal = principal;
     }
-    
+
     @FXML
-    private Button btnPPrincipal;
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
-    @FXML
-    public void clickActionEvent(ActionEvent evento){
-        if (evento.getSource()==btnPPrincipal) {
-            System.out.println("Pagina principal");
-            principal.pPrincipal();
+    public void handleButtonAction(ActionEvent evento) {
+        if (evento.getSource() == btnLogin) {
+            verificarCredenciales();
+        }else if (evento.getSource()==btnRegresar){
+            System.out.println("Regresando a inicio");
+            principal.inicio();
         }
     }
-    
+
+    public void verificarCredenciales() {
+        String username = txtUsername.getText();
+        String password = pfPassword.getText();
+
+        if (username.isEmpty() || password.isEmpty()) {
+            mostrarAlerta("Error de Validación", "Debe ingresar su usuario y contraseña.");
+            return;
+        }
+
+        try {
+            PreparedStatement enunciado = Conexion.getInstancia().getConexion().prepareStatement(
+                "SELECT password FROM Registros WHERE username = ?"
+            );
+            enunciado.setString(1, username);
+            ResultSet resultado = enunciado.executeQuery();
+
+            if (resultado.next()) {
+                String passwordDeDB = resultado.getString("password");
+                if (password.equals(passwordDeDB)) {
+                    System.out.println("Acceso concedido. Bienvenido " + username);
+                    principal.pPrincipal();
+                } else {
+                    mostrarAlerta("Acceso Denegado", "La contraseña es incorrecta.");
+                }
+            } else {
+                mostrarAlerta("Acceso Denegado", "El nombre de usuario no se encuentra registrado.");
+            }
+
+        } catch (SQLException e) {
+            mostrarAlerta("Error de Conexión", "No se pudo establecer la conexión con la base de datos.");
+            e.printStackTrace();
+        }
+    }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
 }

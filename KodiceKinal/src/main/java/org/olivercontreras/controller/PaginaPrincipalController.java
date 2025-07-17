@@ -24,7 +24,7 @@ public class PaginaPrincipalController implements Initializable {
     }
     
     @FXML
-    private Button btnClientes, btnProductos, btnRegresar;
+    private Button btnClientes, btnProductos, btnInicio;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -33,8 +33,8 @@ public class PaginaPrincipalController implements Initializable {
     
     @FXML
     private void clickActionHandler(ActionEvent evento){
-        if (evento.getSource()==btnRegresar) {
-            System.out.println("Regresando a la pagina de inicio");
+        if (evento.getSource()==btnInicio) {
+            System.out.println("Regresando a Inicio");
             principal.inicio();
         }else if (evento.getSource()==btnClientes){
             System.out.println("Dirigiendo a Clientes");

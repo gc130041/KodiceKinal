@@ -26,7 +26,7 @@
       <HBox alignment="CENTER_RIGHT" layoutX="233.0" layoutY="16.0" prefHeight="67.0" prefWidth="360.0" spacing="30.0">
          <children>
             <Button fx:id="btnAcercaDe" mnemonicParsing="false" onAction="#clickActionEvent" text="Acerca de" />
-            <Button mnemonicParsing="false" text="Registrarse" />
+            <Button fx:id="btnRegistrarse" mnemonicParsing="false" onAction="#clickActionEvent" text="Registrarse" />
             <Button fx:id="btnISesion" mnemonicParsing="false" onAction="#clickActionEvent" text="Iniciar Sesion" />
          </children>
       </HBox>
